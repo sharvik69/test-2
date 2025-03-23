@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-repo/your-project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh './build.sh'  // Replace with actual build command
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './test.sh'  // Replace with actual test script
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh './deploy.sh'  // Replace with actual deployment command
+            }
+        }
+    }
+}
